@@ -1,0 +1,26 @@
+.center-box{
+  height: 60vh;
+  width: 80vh;
+  border-radius: 2vh;
+  text-align: center;
+}
+
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.textArea{
+  border: 0.5px solid black;
+  border-radius: 10px;
+  width: 100%;
+  border: 1px solid;
+}
+
+
+
+.textArea{
+  height: 20vh;
+}
