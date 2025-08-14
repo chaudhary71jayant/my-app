@@ -1,30 +1,31 @@
 import React,{useState} from 'react'
 import './FormSnippet.css'
-import Alert from './Alert';
+
 
 
 export default function FormSnippet(props) {
   const[text, setText] = useState("");
   const[wordCount, setWordCount] = useState(null);
   const[charCount, setCharCount] = useState(null);
-  const[alert, setAlert] = useState(null);
+  
 
     const upperCase = () => {
         let newText = text.toUpperCase();
         setText(newText);
-        setAlert("Texts are sucessfully changed to uppercase.");
+        props.showAlert("Converted to UPPERCASE!","success");
     }
 
     const lowerCase = () =>{
         let newText = text.toLowerCase();
         setText(newText);
+        props.showAlert("Converted to Lowe Case!","success");
     }
 
     const countWords = () =>{
         let count = text.trim().split(/\s+/).filter(word => word.length>0);
         let num = count.length;
         setWordCount(num);
-      }
+        }
 
     const countChar = () =>{
       let count = text.length;
@@ -39,6 +40,7 @@ export default function FormSnippet(props) {
       var text = document.getElementById("myBox");
       text.select();
       navigator.clipboard.writeText(text.value);
+      props.showAlert("Texts are copied sucessfully.","success");
     }
 
     const handleCapitalized = (e) =>{
@@ -51,7 +53,7 @@ export default function FormSnippet(props) {
       const final = upadated.charAt(0).toUpperCase() + upadated.slice(1);
 
       setText(final);
-
+      props.showAlerts("Sucessfully Fixed to capitalilzed lines","success")
     }
 
     const handleChange = (event) =>{
@@ -76,7 +78,7 @@ export default function FormSnippet(props) {
            
           </div>
 
-          <Alert value={alert} message={setAlert}/>
+          
 
           {wordCount != null && <p className='word'>Word Count : {wordCount}</p>}
           {charCount != null && <p className='char'>Characters count : {charCount}</p>}
