@@ -53,7 +53,7 @@ export default function FormSnippet(props) {
       const final = upadated.charAt(0).toUpperCase() + upadated.slice(1);
 
       setText(final);
-      props.showAlerts("Sucessfully Fixed to capitalilzed lines","success")
+      props.showAlert("Sucessfully Fixed to capitalilzed lines","success");
     }
 
     const handleChange = (event) =>{
