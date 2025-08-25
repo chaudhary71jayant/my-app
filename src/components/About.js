@@ -39,7 +39,7 @@ export default function About() {
         <div className="text-center mb-5">
           <div className="d-inline-flex align-items-center justify-content-center bg-primary text-white rounded-circle mb-4" 
                style={{width: '80px', height: '80px', fontSize: '2rem'}}>
-            📄
+            Text Help
           </div>
           <h1 className="display-4 fw-bold text-dark mb-4">Text Helper Application</h1>
           <p className="lead text-muted mx-auto" style={{maxWidth: '600px'}}>
