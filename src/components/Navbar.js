@@ -1,18 +1,19 @@
 
 import PropTypes from 'prop-types';
 import './FormSnippet.css';
+import { Link } from 'react-router-dom';
 
 export default function Navbar(props) {
   return (
     <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
         <div className="container-fluid">
-          <a
+          <Link
             className="navbar-brand"
-            href="/
+            to="/
     "
           >
             {props.title}
-          </a>
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -28,19 +29,19 @@ export default function Navbar(props) {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <a
+                <Link
                   className="nav-link active"
                   aria-current="page"
-                  href="/">
+                  to="/">
                   Home
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a
-                  className="nav-link"
-                  href="/">
+                <Link
+                  className="nav-link active"
+                  to="/about">
                   {props.about}
-                </a>
+                </Link>
               </li>
             </ul>
             <div className={`form-check form-switch my-3 text-${props.mode === 'light'?'black':'light'}`}>

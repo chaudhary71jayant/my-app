@@ -3,6 +3,12 @@ import Navbar from "./components/Navbar.js";
 import FormSnippet from "./components/FormSnippet.js";
 import { useState } from "react";
 import Alert from "./components/Alert.js";
+import About from "./components/About.js";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from "react-router-dom";
 
 function App() {
   const[mode, setMode] = useState('light');
@@ -29,14 +35,17 @@ function App() {
     }
   }
   return (
-    <>
-      <Navbar title="TextUtils" about="About us" mode={mode} toggleMode={toggle}/>
-
+    <Router>
+      <Navbar title="Text Help" about="About us" mode={mode} toggleMode={toggle}/>
       <Alert alert={alert}/>
 
-      <FormSnippet mode={mode} showAlert={showAlert}/>
-       
-    </>
+      <Routes>
+          <Route exact path="/" element={<FormSnippet mode={mode} showAlert={showAlert}/>}/>
+          <Route exact path="/about" element={<About/>}/>
+          
+        </Routes>
+      
+    </Router>
   );
 }
 
