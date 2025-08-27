@@ -1,6 +1,6 @@
 
 
-export default function About{
+export default function About(){
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50 p-6">
       <div className="max-w-3xl bg-white shadow-lg rounded-2xl p-8">
